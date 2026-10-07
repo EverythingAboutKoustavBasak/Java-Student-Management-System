@@ -32,8 +32,17 @@ public class Student {
 	
 	
 	public void enrollCourse(String course) {
-		courses.add(course);
-		System.out.println("Student is enrolled to the course - "+course+" sucessfully...");
+		if(validateCourseName(course)) {
+			if(!courses.contains(course)) {
+				courses.add(course);
+				System.out.println("Student is enrolled to the course - "+course+" sucessfully...");
+				
+			}
+			else {
+				System.err.println("Student is already enrolled to the course - "+course);
+			}
+		}
+		
 	}
 	
 	public void printStudentInfo() {
@@ -81,6 +90,16 @@ public class Student {
 		}
 		else {
 			System.err.println("Invalid Student ID! Please enter right student id (like S-1234)");
+			return false;
+		}
+	}
+	
+	public boolean validateCourseName(String course) {
+		if(course.equalsIgnoreCase("Java")||course.equalsIgnoreCase("Selenium")||course.equalsIgnoreCase("devops")) {
+			return true;
+		}
+		else {
+			System.err.println("Invalid course name! '"+course+"' Please select the course from the list only - [Java, Selenium, devOps] ");
 			return false;
 		}
 	}
