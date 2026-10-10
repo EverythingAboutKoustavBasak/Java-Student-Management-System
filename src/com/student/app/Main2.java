@@ -1,6 +1,9 @@
 package com.student.app;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main2 {
@@ -15,7 +18,7 @@ public class Main2 {
 		studentList = new ArrayList<Student>();
 		
 		
-		Student s1, s2, s3;
+		Student s1, s2, s3, s4;
 		
 		s1 = new Student("Koustav", 35, "S-123");
 		s1.enrollCourse("Java");
@@ -30,14 +33,21 @@ public class Main2 {
 		s3 = new Student("Messi", 32, "S-101");
 		s3.enrollCourse("Selenium");
 		
+		s4 = new Student("Adda", 32, "S-101");
+		
+		
 		studentList.add(s1);
 		studentList.add(s2);
 		studentList.add(s3);
+		studentList.add(s4);
+		
 		
 //		System.out.println(studentList);
 		
 		Student result = findStudentById("S-101");
 		System.out.println(result);
+		
+		sortByName();
 		
 		
 	}
@@ -57,6 +67,27 @@ public class Main2 {
 		}
 		
 		return result;
+		
+	}
+	
+	public static void sortByName() {
+		
+		Comparator<Student> studentNameComparator = new Comparator<Student>() {
+
+			@Override
+			public int compare(Student o1, Student o2) {
+				return o1.getName().compareTo(o2.getName());
+			}
+			
+			
+		};
+		//if use lamda 
+//		Comparator<Student> studentNameComparator =
+//		        (o1, o2) -> o1.getName().compareTo(o2.getName());
+		
+		
+		Collections.sort(studentList, studentNameComparator);
+		System.out.println(studentList);
 		
 	}
 
