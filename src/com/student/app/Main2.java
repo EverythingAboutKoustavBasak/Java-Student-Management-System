@@ -45,12 +45,19 @@ public class Main2 {
 	
 	public static Student findStudentById(String studentId) {
 		
-		Student result = studentList.stream()
-				   .filter(x-> x.getStudentId().equalsIgnoreCase(studentId))
-				   .findFirst()
-				   .orElseThrow(()-> new RuntimeException("No Data Found! "));
+		Student result = null;
+		
+		try {
+			result = studentList.stream()
+		   			.filter(x-> x.getStudentId().equalsIgnoreCase(studentId))
+		   			.findFirst()
+		   			.orElseThrow(()-> new RuntimeException());
+		}catch(RuntimeException e) {
+			System.err.println("Student with ID "+studentId+" not found");
+		}
 		
 		return result;
+		
 	}
 
 }
