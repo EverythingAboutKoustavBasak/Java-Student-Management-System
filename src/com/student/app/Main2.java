@@ -1,0 +1,56 @@
+package com.student.app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main2 {
+	
+	private static List<Student> studentList;
+
+	public static void main(String[] args) {
+		System.out.println("-----------------------------------------------------");
+		System.out.println("        Welcome to the Student Management System!");
+		System.out.println("-----------------------------------------------------");
+		
+		studentList = new ArrayList<Student>();
+		
+		
+		Student s1, s2, s3;
+		
+		s1 = new Student("Koustav", 35, "S-123");
+		s1.enrollCourse("Java");
+		s1.enrollCourse("Selenium");
+
+		
+		s2 = new Student("Leo", 30, "S-10");
+		s2.enrollCourse("Java");
+		s2.enrollCourse("Devops");
+
+		
+		s3 = new Student("Messi", 32, "S-101");
+		s3.enrollCourse("Selenium");
+		
+		studentList.add(s1);
+		studentList.add(s2);
+		studentList.add(s3);
+		
+//		System.out.println(studentList);
+		
+		Student result = findStudentById("S-101");
+		System.out.println(result);
+		
+		
+	}
+	
+	
+	public static Student findStudentById(String studentId) {
+		
+		Student result = studentList.stream()
+				   .filter(x-> x.getStudentId().equalsIgnoreCase(studentId))
+				   .findFirst()
+				   .orElseThrow(()-> new RuntimeException("No Data Found! "));
+		
+		return result;
+	}
+
+}

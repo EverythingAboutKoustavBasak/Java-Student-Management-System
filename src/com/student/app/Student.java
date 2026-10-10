@@ -31,6 +31,28 @@ public class Student {
 	}
 	
 	
+	
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+	public String getStudentId() {
+		return studentId;
+	}
+
+
+	public List<String> getCourses() {
+		return courses;
+	}
+
+
 	public void enrollCourse(String course) {
 		if(validateCourseName(course)) {
 			if(!courses.contains(course)) {
