@@ -18,7 +18,7 @@ public class Main2 {
 		studentList = new ArrayList<Student>();
 		
 		
-		Student s1, s2, s3, s4;
+		Student s1, s2, s3;
 		
 		s1 = new Student("Koustav", 35, "S-123");
 		s1.enrollCourse("Java");
@@ -33,22 +33,17 @@ public class Main2 {
 		s3 = new Student("Messi", 32, "S-101");
 		s3.enrollCourse("Selenium");
 		
-		s4 = new Student("Adda", 32, "S-101");
-		
-		
 		studentList.add(s1);
 		studentList.add(s2);
 		studentList.add(s3);
-		studentList.add(s4);
-		
 		
 //		System.out.println(studentList);
 		
 		Student result = findStudentById("S-101");
 		System.out.println(result);
 		
-		sortByName();
 		
+		sortByName();
 		
 	}
 	
