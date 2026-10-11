@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Main3 {
 	
 	private static List<Student> studentList;
+	private static Scanner scanner;
 
 	public static void main(String[] args) {
 		System.out.println("-----------------------------------------------------");
@@ -18,18 +19,93 @@ public class Main3 {
 		
 		studentList = new ArrayList<Student>();
 		
+		scanner = new Scanner(System.in);
 		
-		//Read input from terminal 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Student Name: ");
-		String name = sc.nextLine();
-		System.out.println("You have entered the name "+name+" successfully");
+		System.out.println("------------------------------------------");
+		System.out.println("              Select an Option");
+		System.out.println("------------------------------------------");
+		System.out.println("1. Register a Student.");
+		System.out.println("2. Find Student with Student ID.");
+		System.out.println("3. List All Student Information.");
+		System.out.println("4. List Student Information in Sorted Order.");
+		System.out.println("5. Exit.");
+		
+//		int option = scanner.nextInt();
+		int option = Integer.parseInt(scanner.nextLine().trim());
+
+		
+		switch (option) {
+		case 1:
+			enrollStudent(scanner);
+			break;
+		case 2:
+			findStudentById(scanner);
+			break;
+		case 3:
+			printAllStudentData();
+			break;
+		case 4:
+			sortByName();
+			break;
+		case 5:
+			exit();
+			break;
+
+		default:
+			System.out.println("Invalid Option Selected. Please Select valid option from the list. Thank You!");
+		}
 		
 		
+		
+//		Student result = findStudentById("S-101");
+//		System.out.println(result);
+//		
+//		
+//		sortByName();
 		
 	}
 	
 	
+	private static void exit() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void printAllStudentData() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void findStudentById(Scanner scanner2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void enrollStudent(Scanner scanner2) {
+		System.out.println("Enter the Student Name. ");
+		String studentName = scanner2.nextLine().trim();
+		
+		System.out.println("Enter the Student Age. ");
+		int studentAge = Integer.parseInt(scanner.nextLine().trim());
+		
+		System.out.println("Enter the Student ID. ");
+		String studentID = scanner.nextLine().trim();
+		
+		Student newStudent = new Student(studentName, studentAge, studentID);
+		studentList.add(newStudent);
+		
+		System.out.println("Enter the course to be enrolled.");
+		String courseName = scanner2.nextLine().trim();
+		newStudent.enrollCourse(courseName);
+		
+		System.out.println("Student Added Successfully into the LMS.");
+		
+	}
+
+
 	public static Student findStudentById(String studentId) {
 		
 		Student result = null;
