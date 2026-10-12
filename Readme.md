@@ -11,7 +11,14 @@ Hi, I'm Koustav Basak, a Software QA Engineer with 2.5+ years of experience in s
 
 My technical skills include Java, Selenium WebDriver, TestNG, API Testing, Postman, RestAssured, and Maven. I'm passionate about improving software quality through automation, strengthening my programming fundamentals, and continuously learning modern testing practices.
 
-This project reflects my commitment to revisiting Core Java concepts through practical implementation and building a strong foundation for SDET development.
+This project reflects my commitment to revisiting Core Java concepts through practical implementation and building a strong foundation for SDET.
+
+## Author Information
+- [Koustav Basak](https://github.com/EverythingAboutKoustavBasak/)
+- [Email - koustav23042001@gmail.com]
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/koustav-basak-569887243)
+
 
 
 ## Features
